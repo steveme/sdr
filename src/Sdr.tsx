@@ -90,15 +90,16 @@ export default function Sdr() {
 
     }
     return <div>
-        <h1>Steves SDR</h1>
+        <h1>Steves Web USB SDR</h1>
         <label>Sample Rate<input type="text" value={sampleRate}/></label><br/>
         <label>Center Frequency<input type="number" value={centerFrequency}/></label><br/>
-        <button onClick={requestDevice}>Request Device</button>
+        <button onClick={requestDevice}>Connect USB Device</button>
         <br/>
         <button onClick={open}>Open</button>
         <br/>
         <button onClick={readSample}>Read Sample</button>
         <br/>
+        <h2>IQ Samples:</h2>
         <pre>{samplesAsText}</pre>
     </div>
 }
