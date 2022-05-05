@@ -90,7 +90,8 @@ export default function Sdr() {
 
     }
     return <div>
-        <h1>Steves Web USB SDR</h1>
+        <h1>r3b.dev Web USB SDR</h1>
+        <a href="https://github.com/steveme/sdr">Github Repo</a><br/><br/>
         <label>Sample Rate<input type="text" value={sampleRate}/></label><br/>
         <label>Center Frequency<input type="number" value={centerFrequency}/></label><br/>
         <button onClick={requestDevice}>Connect USB Device</button>
