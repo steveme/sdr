@@ -59,7 +59,8 @@ function useSdr() {
         //
         if (sdrRef.current !== undefined) {
 
-            const samples = await sdrRef.current.readSamples(16 * 16384);
+            //const samples = await sdrRef.current.readSamples(16 * 16384);
+            const samples = await sdrRef.current.readSamples(16384);
 
             //
             // process the samples ...
@@ -90,16 +91,17 @@ export default function Sdr() {
 
     }
     return <div>
-        <h1>r3b.dev Web USB SDR</h1>
+        <h1>r3b.dev - Steves Web USB SDR Experiment</h1>
         <a href="https://github.com/steveme/sdr">Github Repo</a><br/><br/>
         <label>Sample Rate<input type="text" value={sampleRate}/></label><br/>
         <label>Center Frequency<input type="number" value={centerFrequency}/></label><br/>
-        <button onClick={requestDevice}>Connect USB Device</button>
         <br/>
-        <button onClick={open}>Open</button>
-        <br/>
+        <button onClick={requestDevice}>Connect to USB Device</button> Then:
+        <br/><br/>
+        <button onClick={open}>Open and setup the device</button> (wait a sec for centerFrequency to update before clicking Read)
+        <br/><br/>
         <button onClick={readSample}>Read Sample</button>
-        <br/>
+        <br/><br/>
         <h2>IQ Samples:</h2>
         <pre>{samplesAsText}</pre>
     </div>
